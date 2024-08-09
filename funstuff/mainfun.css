@@ -6,17 +6,20 @@ body {
     font-family: "Gotham Bold";
     text-align: center;
     color: white;
-    background-color: #5252ad;
+    background-color: #00007e;
 }
 .box {
     background-color: #004d80;
     background-size: auto;
+    border-radius: 2%;
+    box-shadow: 10px 5px 5px rgb(93, 93, 255);
     transition-property: all;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 }
 .box:hover {
-    background-color: #4441e6;
+    background-color: #001aff;
+    border-radius: 5%;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
@@ -31,4 +34,15 @@ button {
     background-image:linear-gradient(to top left,#3633ff,#15008a);
     border-radius: 5em;
     border-color: #11006d;
+}
+button:hover {
+    font-family: "Gotham Bold";
+    margin-top: 1%;
+    color: white;
+    background-image:linear-gradient(to top left,#1b17ff,#0d0055);
+    border-radius: 5em;
+    border-color: #0b004d;
+}
+.twiddle {
+    opacity: 3%;
 }
