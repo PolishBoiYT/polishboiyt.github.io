@@ -35,3 +35,7 @@ button {
     border-radius: 5em;
     border-color: #11006d;
 }
+.icon {
+    width: 150px;
+    height: 150px;
+}
