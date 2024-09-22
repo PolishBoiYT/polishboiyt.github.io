@@ -1,41 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: "Gotham Bold";
     src: url("fonts/GothamBold.ttf");
-  }
+}
+
 body {
-    font-family: "Gotham Bold";
+    background: url('https://files.enderman.ch/wallpapers/Reflection.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Gotham Bold", sans-serif;
+    color: white;
+    animation: slideIn 1s ease-in-out;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.topbar {
+    background: rgba(0, 0, 0, 0.9);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+}
+
+.topbar img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.topbar img:hover {
+    transform: scale(1.1);
+    filter: blur(1px);
+}
+
+.topbar h1 {
+    margin-left: 10px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 204, 0, 0.3);
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+}
+
+.flag {
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.flag:hover {
+    transform: scale(1.1);
+}
+
+.centerinfo {
+    position: relative;
+    z-index: 1;
     text-align: center;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    padding: 60px 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.centerinfo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.centerinfo p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(78, 68, 122, 0.9);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bottom {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.play-audio {
     color: white;
-    background-color: #5252ad;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-.box {
-    background-color: #004d80;
-    background-size: auto;
-    border-radius: 2%;
-    box-shadow: 10px 5px 5px rgb(44, 44, 255);
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+
+.play-audio:hover {
+    color: rgba(255, 204, 0, 0.9);
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
 }
-.box:hover {
-    background-color: #4441e6;
-    border-radius: 5%;
+
+@media (max-width: 768px) {
+    .topbar {
+        height: 60px;
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .topbar h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .centerinfo h2 {
+        font-size: 2rem;
+    }
+
+    .centerinfo p {
+        font-size: 1rem;
+    }
+
+    .bottom {
+        font-size: 0.9rem;
+    }
 }
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
-a {
-    color: lightgray;
-}
-button {
-    font-family: "Gotham Bold";
-    margin-top: 1%;
-    color: white;
-    background-image:linear-gradient(to top left,#3633ff,#15008a);
-    border-radius: 5em;
-    border-color: #11006d;
-}
-.icon {
-    width: 150px;
-    height: 150px;
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

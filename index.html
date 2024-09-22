@@ -1,41 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>PolishBoiYT</title>
-    <meta name="title" content="PolishBoiYT's Website">
-    <meta name="description" content="A (better and redesigned) website made by PolishBoiYT, formerly known as nSwish Ball..">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PolishBoiYT's Website</title>
+    <meta name="description" content="Welcome to PolishBoiYT's website! Discover projects, thoughts, and interests.">
+    
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src='main.js'></script>
+    <link rel="stylesheet" href="main.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <img class="icon" src="icon.png" ondblclick="POLSKAA()">
-    <p class="why">WHY DID YOU DO THAT</p>
-    <p class="why2">WHY DID YOU KILL HIM</p>
-    <div class="box">
-        <h1>PolishBoiYT's Website</h1>
-        <div class="yapping">
-        Hello! I am a human that likes programming. Which is why you're here.<br>
-        This website's JS file is made using JQuery which is great as it supports IE 6 and Safari.<br>
-        "oh but who uses IE or Safari?" People who don't care about new features or use their old computer from... i dunno 1999?<br>
-        For safari, it's people with macOS or iOS or whatever.<br>
-        <br>
-        This website is for sharing some stuff i've been working on. Like the previous website! :D
-        </div>
-        <div class="notyapping">
-            <ul>
-                <li>A human that likes programming.</li>
-                <li>This website was hosted using <a href="https://pages.github.com">GitHub Pages</a></li>
-                <li>What else... Oh yeah this website is for sharing some stuff... like the previous website.</li>
-                <button class="ok" onclick="loadstuff()">Alright, understood.</button>
-            </ul> 
-        </div>
-        <button class="stopyapping" onclick="stopyapping()">Alright alright, cut down the yapping.</button>
-    </div>
-    <br>
+    <audio id="click-sound" src="click.ogg" preload="auto"></audio>
+    <audio id="game-sound" src="GeometryDash.mp3" preload="auto"></audio>
+
+    <header class="topbar" role="banner">
+        <img src="icon.png" alt="PolishBoiYT Icon" class="logo" />
+        <h1 class="webname">PolishBoiYT</h1>
+        <button class="easteregg" style="opacity: 0.025;" onclick="foundme()">Click me for a suprise!</button>
+        <nav class="nav-links" role="navigation">
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#web-projects" class="nav-item">Web Projects</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+    </header>    
+    
+    <main class="centerinfo" role="main">
+        <h2>Welcome to my website!</h2>
+        <p>This is a place where I share my thoughts, projects, and interests.</p>
+    </main>
+
+    <section id="projects" class="hidden" role="region" aria-labelledby="projects">
+        <h2 id="projects">My Projects</h2>
+        <p>Yep, you heard that right.</p>
+        <h1>Blue Screen of Click/BSoD Clicker</h1>
+        <h3>A "game" made in C# .NET!</h3>
+        <p>All you have to do is click anywhere and... BOOM, counter increased!</p>
+        <p>
+            <a href="https://github.com/nSwishBall/nswishball.github.io/raw/main/BlueScreenOfClick/Blue%20Screen%20of%20Click.exe">Download Blue Screen of Click here!</a>
+            <br>
+            <a href="https://github.com/nSwishBall/Blue-Screen-of-Click">Source Code</a>
+        </p>
+    </section>
+
+    <section id="web-projects" class="hidden" role="region" aria-labelledby="web-projects">
+        <h2 id="web-projects">Web Projects</h2>
+        <p>Check out my web-based project:</p>
+        <h3>Webpad</h3>
+        <p>A simple online text editor. You can use it <a href="https://polishboiyt.github.io/webpad" target="_blank" rel="noopener noreferrer">here</a>.</p>
+    </section>
+
+    <section id="about" class="hidden" role="region" aria-labelledby="about">
+        <h2 id="about">About Me</h2>
+        <p>Hello! I'm just a person who enjoys programming, especially C# and Python.</p>
+        <p>I am from Poland. <img class="flag" src="https://em-content.zobj.net/source/apple/391/flag-poland_1f1f5-1f1f1.png" alt="Flag of Poland"/></p>
+        <p>I enjoy playing games too! Specifically <a href="#" class="play-audio">Geometry Dash</a>.</p>
+    </section>
+
+    <section id="contact" class="hidden" role="region" aria-labelledby="contact">
+        <h2 id="contact">Contact Me!</h2>
+        <p>You can contact me through Discord: <i>polishboiyt.py</i> or visit <a href="https://discord.gg/yHg66vgwXv" target="_blank" rel="noopener noreferrer">my Discord server</a>.</p>
+        <p>On Guilded, check out <a href="https://www.guilded.gg/u/polishboipy" target="_blank" rel="noopener noreferrer">my Guilded profile</a> or <a href="https://guilded.gg/polishboiyt-py" target="_blank" rel="noopener noreferrer">my Guilded server</a>.</p>
+    </section>
+
+    <footer class="bottom" role="contentinfo">
+        <p>&copy; 2024 PolishBoiYT. All rights reserved.</p>
+    </footer>
 </body>
 </html>
