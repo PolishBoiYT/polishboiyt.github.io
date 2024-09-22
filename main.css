@@ -157,19 +157,48 @@ section.visible {
     text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
 }
 
+.nav-links a,
+a {
+    color: #ffcc00; /* Normal link color */
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+a:hover {
+    background-color: rgba(255, 204, 0, 0.3);
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+}
+
+a:visited {
+    color: white; /* Change visited link color to white */
+}
+
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .topbar {
-        height: 60px;
+        height: auto;
         flex-direction: column;
-        padding: 0 15px;
+        padding: 10px;
     }
 
     .topbar h1 {
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .nav-links {
-        gap: 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .centerinfo {
+        padding: 40px 20px;
+        margin: 20px auto;
+        max-width: 90%;
     }
 
     .centerinfo h2 {
@@ -180,8 +209,27 @@ section.visible {
         font-size: 1rem;
     }
 
+    section {
+        padding: 40px 20px;
+        max-width: 90%;
+    }
+
     .bottom {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .centerinfo h2 {
+        font-size: 1.5rem;
+    }
+
+    .centerinfo p {
+        font-size: 0.9rem;
+    }
+
+    .bottom {
+        font-size: 0.8rem;
     }
 }
 
