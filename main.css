@@ -159,8 +159,9 @@ section.visible {
 
 .nav-links a,
 a {
-    color: #ffcc00; /* Normal link color */
+    color: #ffcc00;
     text-decoration: none;
+    transition: all ease 0.5s;
 }
 
 .nav-links a:hover,
@@ -171,11 +172,10 @@ a:hover {
 }
 
 a:visited {
-    color: white; /* Change visited link color to white */
+    color: white;
 }
 
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .topbar {
         height: auto;
